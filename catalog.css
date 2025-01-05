@@ -1,0 +1,226 @@
+/* Color Variables */
+:root {
+    --primary-blue: #4A90E2;
+    --secondary-blue: #6BB2F2;
+    --background-color: #F8FAFD; /* Softer light background */
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --button-hover: #357ABD;
+    --input-border: #A9D3FF;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header Styling */
+header {
+    background-color: var(--white);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+header h1 {
+    color: var(--primary-blue);
+    font-size: 1.8em;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding-top: 10px;
+}
+
+nav a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+
+/* Main Section */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#searchBar {
+    padding: 12px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    display: block;
+}
+
+/* Category Carousel */
+.category-carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.scroll-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.category-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* Genre Card */
+.genre-card {
+    min-width: 250px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+
+.genre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-hover);
+}
+
+.genre-button {
+    font-size: 1.1em;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: var(--primary-blue);
+    padding: 15px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.genre-button:hover {
+    color: var(--button-hover);
+}
+
+/* Subcategory and Book List */
+.subcategory-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 10px;
+    margin-top: 10px;
+}
+
+.subcategory-box {
+    background-color: #F9FBFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.book-item {
+    background-color: #F5F9FF;
+    border: 1px solid #D1E7FF;
+    border-radius: 8px;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.book-item:hover {
+    box-shadow: 0 4px 8px var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+.book-item h5 {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+.book-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    margin-top: 40px;
+    box-shadow: 0 -2px 8px var(--shadow-light);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #searchBar {
+        width: 100%;
+        max-width: none;
+    }
+
+    .book-list {
+        gap: 10px;
+    }
+
+    .book-item {
+        width: 140px;
+    }
+}

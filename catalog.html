@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>catalog</title>
+  <link rel="stylesheet" href="./catalog.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Catalog - Chitkara International School</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://i.ibb.co/N9gjFfZ/Chitkara-International-School-Chandigarh.png" alt="Chitkara International School Library Logo" class="logo">
+            <h1>Chitkara International School Library Catalog</h1>
+            <nav>
+                <ul>
+                    <a href="about us (1).html">about us</a>
+                    <a href="catalog.html">Catalog</a>
+                    <a href="member mangemnt.html">Member Management</a>
+                    <a href="timing.html">Library Timings</a>
+                    <a href="issue.html">Book Issue & Return</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="catalog">
+            <h2>Explore Our Library</h2>
+            <input type="text" id="searchBar" placeholder="Search for books..." onkeyup="searchBooks()">
+            <div class="category-carousel">
+                <button class="scroll-btn" onclick="scrollCategories(-1)">&#10094;</button>
+                <div class="category-list" id="categoryList"></div>
+                <button class="scroll-btn" onclick="scrollCategories(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Chitkara International School. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const genres = [
+            { name: "Textbooks", subcategories: ["Math", "Science", "History", "English"] },
+            { name: "Fiction", subcategories: ["Adventure", "Fantasy", "Mystery", "Romance"] },
+            { name: "Science", subcategories: ["Physics", "Chemistry", "Biology", "Astronomy"] },
+        ];
+
+        function generateCatalog() {
+            const categoryList = document.getElementById("categoryList");
+            genres.forEach((genre, index) => {
+                const genreCard = document.createElement("div");
+                genreCard.classList.add("genre-card");
+
+                const genreButton = document.createElement("button");
+                genreButton.innerText = genre.name;
+                genreButton.classList.add("genre-button");
+                genreButton.onclick = () => toggleSubcategories(index);
+                genreCard.appendChild(genreButton);
+
+                const subcategoryContainer = document.createElement("div");
+                subcategoryContainer.classList.add("subcategory-container");
+                subcategoryContainer.id = `subcategory-${index}`;
+                subcategoryContainer.style.display = "none";
+
+                genre.subcategories.forEach(subcategory => {
+                    const subcategoryBox = document.createElement("div");
+                    subcategoryBox.classList.add("subcategory-box");
+
+                    const subcategoryTitle = document.createElement("h4");
+                    subcategoryTitle.innerText = subcategory;
+                    subcategoryBox.appendChild(subcategoryTitle);
+
+                    const bookList = document.createElement("div");
+                    bookList.classList.add("book-list");
+
+                    for (let i = 1; i <= 10; i++) {
+                        const bookItem = document.createElement("div");
+                        bookItem.classList.add("book-item");
+                        bookItem.innerHTML = `
+                            <h5>Book Title ${i}</h5>
+                            <p><strong>Subcategory:</strong> ${subcategory}</p>
+                            <p><strong>Author:</strong> Author ${i}</p>
+                            <p><strong>Availability:</strong> ${i % 2 === 0 ? "Available" : "Checked Out"}</p>
+                        `;
+                        bookList.appendChild(bookItem);
+                    }
+                    subcategoryBox.appendChild(bookList);
+                    subcategoryContainer.appendChild(subcategoryBox);
+                });
+
+                genreCard.appendChild(subcategoryContainer);
+                categoryList.appendChild(genreCard);
+            });
+        }
+
+        function toggleSubcategories(index) {
+            const subcategoryContainer = document.getElementById(`subcategory-${index}`);
+            subcategoryContainer.style.display = subcategoryContainer.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollCategories(direction) {
+            const categoryList = document.getElementById("categoryList");
+            const scrollAmount = 220;
+            categoryList.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+        }
+
+        function searchBooks() {
+            const input = document.getElementById("searchBar");
+            const filter = input.value.toLowerCase();
+            const books = document.getElementsByClassName("book-item");
+
+            for (let i = 0; i < books.length; i++) {
+                const title = books[i].getElementsByTagName("h5")[0];
+                books[i].style.display = title.innerHTML.toLowerCase().includes(filter) ? "" : "none";
+            }
+        }
+
+        window.onload = generateCatalog;
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

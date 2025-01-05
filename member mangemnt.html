@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>member mangement system</title>
+  <link rel="stylesheet" href="member mangemnt.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Management | Library Management System</title>
+    <link rel="stylesheet" href="member mangemnt.css">
+</head>
+<body>
+    <!-- Name Card -->
+    <section id="name-card" class="name-card">
+        <div class="card">
+            <h3>Apurba</h3>
+            <p>Class 10, Panchkula</p>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Library Member Management</h1>
+            <nav class="nav" aria-label="Main Navigation">
+                <a href="home.html">Home</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="member mangemnt.html">Member Management</a>
+                <a href="timing.html">Library Timings</a>
+                <a href="issue.html">Book Issue & Return</a>
+                <a href="login.html.html" class="btn-login" aria-label="login">Login</a>
+                <a href="login.html.html" class="btn-login" aria-label="login">Login</a>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Member Management Section -->
+    <section id="member-management" class="member-management">
+        <div class="container">
+            <h2>Manage Library Members</h2>
+
+            <!-- Add Member Form -->
+            <div class="add-member">
+                <h3>Add New Member</h3>
+                <form class="member-form">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter member's full name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+                    <label for="member-id">Membership ID</label>
+                    <input type="text" id="member-id" name="member-id" placeholder="Enter Membership ID" required>
+
+                    <label for="member-type">Member Type</label>
+                    <select id="member-type" name="member-type" required>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="staff">Staff</option>
+                    </select>
+
+                    <button type="submit" class="btn-submit">Add Member</button>
+                </form>
+            </div>
+
+            <!-- Member List -->
+            <div class="member-list">
+                <h3>Current Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Membership ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Member Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Placeholder for members; ideally populated dynamically -->
+                        <tr>
+                            <td>12345</td>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>Student</td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Additional members go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Chitkara International School Library. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Color Palette */
+:root {
+    --primary-blue: #4A90E2;
+    --secondary-blue: #8FCBFF;
+    --text-color: #333333;
+    --background-light: #F5F5F5;
+    --card-bg: #FFFFFF;
+    --border-light: #E0E0E0;
+    --hover-blue: #357ABD;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.header {
+    background-color: var(--primary-blue);
+    padding: 20px;
+    color: #FFF;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary-blue);
+}
+
+.btn-login {
+    padding: 8px 16px;
+    background-color: var(--secondary-blue);
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: var(--hover-blue);
+}
+
+/* Overview Section */
+.overview-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.overview-section h2 {
+    font-size: 36px;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+    font-size: 22px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Timing Section */
+.timing-section {
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    text-align: center;
+}
+
+.timing-section h2 {
+    font-size: 36px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.schedule-box {
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: #FFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

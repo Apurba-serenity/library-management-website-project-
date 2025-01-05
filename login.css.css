@@ -1,0 +1,117 @@
+/* General Styling */
+:root {
+    --primary-blue: #4A90E2;
+    --secondary-blue: #6BB2F2;
+    --background-color: #F0F4FA; /* Solid light blue background */
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --button-hover: #357ABD;
+    --input-border: #A9D3FF;
+}
+
+/* Login Page Styles */
+.login-section {
+    background-image: url("https://i.ibb.co/bdnzj6b/libraries.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: var(--white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.login-box {
+    text-align: center;
+}
+
+.login-box .logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    font-size: 28px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F9FBFF;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-login:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.form-footer a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Hover effect for login container */
+.login-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}

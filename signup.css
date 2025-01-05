@@ -1,0 +1,156 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Background Animation */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("https://i.ibb.co/YXdmLBR/libcomp-ALEPH.jpg") no-repeat center center/cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #a0c4ff, #c9e8ff);
+  animation: gradientShift 10s ease infinite;
+  z-index: -1;
+  opacity: 0.5; /* Subtle overlay */
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Signup container */
+.signup-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background overlay */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Logo container */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  width: 150px;
+}
+
+/* Form styling */
+.signup-form h2 {
+  color: #2d4f8b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem;
+  padding-left: 10px;
+  border: 1px solid #bcd7ff;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #2d4f8b;
+  box-shadow: 0 0 8px rgba(45, 79, 139, 0.3);
+}
+
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 5px;
+  font-size: 0.8rem;
+  color: #2d4f8b;
+}
+
+/* Button Styling */
+.signup-button {
+  width: 100%;
+  background-color: #2d4f8b;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.signup-button:hover {
+  background-color: #2a4381;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(42, 67, 129, 0.3);
+}
+
+/* Login Text */
+.login-text {
+  margin-top: 1rem;
+  color: #2d4f8b;
+  font-size: 0.9rem;
+}
+
+.login-text a {
+  color: #2a4381;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .signup-container {
+    padding: 1.5rem;
+    width: 90%;
+  }
+}
